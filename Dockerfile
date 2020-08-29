@@ -1,3 +1,4 @@
+# TODO: pick a smaller starting container
 FROM ubuntu:latest
 RUN apt-get update
 RUN apt-get install -y software-properties-common
