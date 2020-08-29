@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# if any command fails, then exit this script immediately
+set -e
+
+echo "docker build --rm -t bitdecaygames/lime-build-action:latest ."
+docker build --rm -t bitdecaygames/lime-build-action:latest .
+
+# ignore errors from these commands
+echo "stop any running docker container"
+set +e
+docker container stop lime-build-action
+docker container rm lime-build-action
+set -e
+
+echo "docker run --name lime-build-action bitdecaygames/lime-build-action:latest"
+docker run --name lime-build-action bitdecaygames/lime-build-action:latest
