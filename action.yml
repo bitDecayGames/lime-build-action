@@ -1,0 +1,21 @@
+# action.yml
+name: 'Lime Build'
+description: 'Build a haxe project with lime'
+inputs:
+  dir:
+    description: 'The relative directory that the lime commands will take place in.  Defaults to ./'
+    required: false
+    default: './'
+  platform:
+    description: 'Type of lime build to run. Accepts html5|neko|macos|windows|flash|ios|android|linux.  See https://lime.software/docs/home/'
+    required: false
+    default: 'html5'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.dir }}
+    - ${{ inputs.platform }}
