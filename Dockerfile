@@ -1,3 +1,3 @@
-FROM docker.pkg.github.com/bitdecaygames/limebuild/limebuild:latest
+FROM mwingfield/limebuild:latest
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
