@@ -1,30 +1,17 @@
 #!/bin/sh -l
 
-echo "Hello ( $1 , $dir ) ( $2 , $platform )"
+# first argument is the sub-directory (defaults to ./)
+# second argument is the platform for the lime build (defaults to html5)
 
 set -e
 
-if [[ -z "$GITHUB_WORKSPACE" ]]; then
-  echo "Set the GITHUB_WORKSPACE env variable."
-  exit 1
-fi
-
-# if [[ -z "$GITHUB_REPOSITORY" ]]; then
-#   echo "Set the GITHUB_REPOSITORY env variable."
-#   exit 1
-# fi
-
-
-#echo " - ls -la ~/haxelib"
-#ls -la /var/haxelib
+echo "ls -la ~/haxelib"
+ls -la /var/haxelib
 # not sure why it is having me do this agian, but it is
-#echo " - haxelib setup ~/haxelib"
-#haxelib setup /var/haxelib
-#echo " - haxelib version"
+echo "haxelib setup /var/haxelib"
+haxelib setup /var/haxelib
 haxelib version
-#echo " - haxelib path lime"
-#haxelib path lime
-#echo " - lime --version"
+haxelib path lime
 lime --version
 
 echo "cd ${GITHUB_WORKSPACE}/$1"
