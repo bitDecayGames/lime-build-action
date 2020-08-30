@@ -5,7 +5,7 @@
 
 set -e
 
-echo "ls -la ~/haxelib"
+echo "ls -la /var/haxelib"
 ls -la /var/haxelib
 # not sure why it is having me do this agian, but it is
 echo "haxelib setup /var/haxelib"
@@ -19,6 +19,9 @@ cd ${GITHUB_WORKSPACE}/$1
 
 echo "ls -la"
 ls -la
+
+echo "haxelib install all"
+haxelib install all
 
 echo "lime build $2"
 lime build $2
