@@ -29,5 +29,13 @@ lime build $2
 echo "cd export"
 cd export
 
+echo "ls -la"
+ls -la
+
 echo "zip -j ${2}.zip $2 > /dev/null"
 zip -j ${2}.zip $2 > /dev/null
+
+echo "ls -la"
+ls -la
+
+echo "Done"
