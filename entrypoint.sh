@@ -33,7 +33,7 @@ echo "ls -la"
 ls -la
 
 echo "zip -j ${2}.zip $2 > /dev/null"
-zip -j ${2}.zip $2 > /dev/null
+zip ${2}.zip ${2}/
 
 echo "ls -la"
 ls -la
