@@ -21,7 +21,7 @@ echo "ls -la"
 ls -la
 
 echo "haxelib install all"
-haxelib install all
+yes y | haxelib install all
 
 echo "lime build $2"
 lime build $2
