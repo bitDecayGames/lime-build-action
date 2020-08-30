@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -z "$1" ]
+  then
+    echo "must provide a version number in the form of v0.0.2"
+    exit 1
+fi
+
+git add .
+git commit -m "$1"
+git tag -a $1 -m "$1"
+git push --follow-tags
