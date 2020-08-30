@@ -32,8 +32,8 @@ cd export
 echo "ls -la"
 ls -la
 
-echo "zip -r ${2}.zip ${2}/"
-zip -r ${2}.zip ${2}/
+echo "zip -r ${2}.zip ${2}/*"
+zip -r ${2}.zip ${2}/*
 
 echo "ls -la"
 ls -la
