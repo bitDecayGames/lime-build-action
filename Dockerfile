@@ -11,5 +11,7 @@ RUN yes | haxelib install lime
 RUN yes | haxelib run lime setup
 RUN cp "/root/haxelib/lime/7,8,0/templates/bin/lime.sh" /usr/local/bin/lime
 RUN chmod 755 /usr/local/bin/lime
+RUN haxelib version
+RUN lime --version
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

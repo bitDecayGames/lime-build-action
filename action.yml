@@ -11,7 +11,7 @@ inputs:
     required: false
     default: 'html5'
 outputs:
-  time: # id of output
+  time:
     description: 'The time we greeted you'
 runs:
   using: 'docker'
