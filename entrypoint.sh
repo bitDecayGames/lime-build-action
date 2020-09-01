@@ -30,8 +30,14 @@ set +e
 IFS='|' read -r -a gitDependencyArray <<< "$4"
 for gitDep in "${gitDependencyArray[@]}"
 do
-	echo "haxelib git $gitDep"
-    haxelib git $gitDep
+	# check if the dep is empty or not
+	if [ -z "$gitDep" ]
+	then
+	    # do nothing since it is empty
+	else
+	    echo "haxelib git $gitDep"
+    	haxelib git $gitDep
+	fi
 done
 set -e
 
