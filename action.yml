@@ -14,6 +14,10 @@ inputs:
     description: 'Any extra build args to pass to the lime build call'
     required: false
     default: ''
+  gitDependencies:
+    description: 'A list of haxelib dependencies that are gathered through git links.  Separated by | . See https://lib.haxe.org/documentation/using-haxelib/#git for more.'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -21,3 +25,4 @@ runs:
     - ${{ inputs.dir }}
     - ${{ inputs.platform }}
     - ${{ inputs.buildArgs }}
+    - ${{ inputs.gitDependencies }}
