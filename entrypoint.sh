@@ -23,10 +23,8 @@ cd ${GITHUB_WORKSPACE}/$1
 echo "ls -la"
 ls -la
 
-echo "haxelib install all"
-yes y | haxelib install all
-
 set +e
+echo "attempt to parse git dependencies: $4"
 IFS='|' read -r -a gitDependencyArray <<< "$4"
 for gitDep in "${gitDependencyArray[@]}"
 do
@@ -39,7 +37,11 @@ do
     	haxelib git $gitDep
 	fi
 done
+echo "done parsing git dependencies"
 set -e
+
+echo "haxelib install all"
+yes y | haxelib install all
 
 echo "lime build $2 $3"
 lime build $2 $3
