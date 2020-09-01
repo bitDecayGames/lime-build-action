@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash
 
 # first argument is the sub-directory (defaults to ./)
 # second argument is the platform for the lime build (defaults to html5)
@@ -25,15 +25,14 @@ ls -la
 
 set +e
 echo "attempt to parse git dependencies: $4"
-set -f
-IFS='|'
-gitDependencyArray=($4)
+IFS='|' read -ra gitDependencyArray <<< "$4"
 for i in "${!gitDependencyArray[@]}"; do 
 	gitDep=${gitDependencyArray[$i]}
 	# check if the dep is empty or not
 	if [ -z "$gitDep" ]
 	then
 	    # do nothing since it is empty
+	    echo "empty"
 	else
 	    echo "haxelib git $gitDep"
     	haxelib git $gitDep
