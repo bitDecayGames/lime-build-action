@@ -15,7 +15,7 @@ inputs:
     required: false
     default: ''
   gitDependencies:
-    description: 'A list of haxelib dependencies that are gathered through git links.  Separated by | . See https://lib.haxe.org/documentation/using-haxelib/#git for more.'
+    description: 'A list of haxelib dependencies that are gathered through git links.  Separated by | . In the form of [project-name] [git-clone-path] [branch]. See https://lib.haxe.org/documentation/using-haxelib/#git for more.'
     required: false
     default: ''
 runs:
