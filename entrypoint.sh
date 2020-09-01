@@ -25,9 +25,11 @@ ls -la
 
 set +e
 echo "attempt to parse git dependencies: $4"
-IFS='|' read -r -a gitDependencyArray <<< "$4"
-for gitDep in "${gitDependencyArray[@]}"
-do
+set -f
+IFS='|'
+gitDependencyArray=($4)
+for i in "${!gitDependencyArray[@]}"; do 
+	gitDep=${gitDependencyArray[$i]}
 	# check if the dep is empty or not
 	if [ -z "$gitDep" ]
 	then
