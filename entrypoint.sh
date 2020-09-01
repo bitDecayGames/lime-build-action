@@ -2,6 +2,7 @@
 
 # first argument is the sub-directory (defaults to ./)
 # second argument is the platform for the lime build (defaults to html5)
+# third argument is build args to the build call
 
 set -e
 
@@ -23,8 +24,8 @@ ls -la
 echo "haxelib install all"
 yes y | haxelib install all
 
-echo "lime build $2"
-lime build $2
+echo "lime build $2 $3"
+lime build $2 $3
 
 echo "cd export"
 cd export

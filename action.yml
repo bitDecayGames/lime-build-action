@@ -10,12 +10,14 @@ inputs:
     description: 'Type of lime build to run. Accepts html5|neko|macos|windows|flash|ios|android|linux.  See https://lime.software/docs/home/'
     required: false
     default: 'html5'
-outputs:
-  time:
-    description: 'The time we greeted you'
+  buildArgs:
+    description: 'Any extra build args to pass to the lime build call'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.dir }}
     - ${{ inputs.platform }}
+    - ${{ inputs.buildArgs }}
