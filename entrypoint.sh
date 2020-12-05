@@ -8,11 +8,11 @@ set -e
 # ls -la /var/haxelib
 
 # not sure why it is having me do this agian, but it is
-# echo "haxelib setup /var/haxelib"
-# haxelib setup /var/haxelib
+echo "haxelib setup /var/haxelib"
+haxelib setup /var/haxelib
 haxelib version
-# haxelib path lime
-# lime --version
+haxelib path lime
+lime --version
 
 echo "cd ${GITHUB_WORKSPACE}/$1"
 cd ${GITHUB_WORKSPACE}/$1
@@ -22,7 +22,8 @@ ls -la
 
 set +e
 echo "Running initialization script: $4"
-bash -c $4
+chmod +x $4
+sh $4
 echo "Finished initialization"
 set -e
 
