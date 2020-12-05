@@ -23,7 +23,7 @@ ls -la
 set +e
 echo "Running initialization script: $4"
 chmod +x $4
-bash $4
+bash -c $4
 echo "Finished initialization"
 set -e
 
