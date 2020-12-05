@@ -27,6 +27,9 @@ bash -c $4
 echo "Finished initialization"
 set -e
 
+echo "All Versions:"
+haxelib list
+
 echo "lime build $2 $3"
 lime build $2 $3
 
