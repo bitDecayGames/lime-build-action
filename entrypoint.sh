@@ -4,6 +4,8 @@
 
 set -e
 
+echo "GITHUB_WORKSPACE=${GITHUB_WORKSPACE}"
+
 echo "cd ${GITHUB_WORKSPACE}/$1"
 cd ${GITHUB_WORKSPACE}/$1
 
