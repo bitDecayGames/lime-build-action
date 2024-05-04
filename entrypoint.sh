@@ -17,6 +17,7 @@ echo "Finished initialization"
 set -e
 
 echo "All Versions:"
+echo -n "Haxe: " && haxe --version
 haxelib list
 
 echo "lime build $2 $3"
